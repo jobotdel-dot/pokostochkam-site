@@ -2,7 +2,7 @@
 //
 // Запуск:  node tools/md-to-html.mjs <путь-к-md> [выходной-html]
 // Пример:  node tools/md-to-html.mjs src/04-rsv-1-kvartal.md
-//           → ../../buh-portal/article-rsv-1-kvartal.html
+//           → ./article-rsv-1-kvartal.html (в папке сайта)
 //
 // Что делает:
 //   - читает front-matter (@kicker/@meta/@desc/@lead) и тело;
@@ -21,7 +21,7 @@ import { fileURLToPath } from "node:url";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const BLOG_DIR = resolve(HERE, "..");
-const PORTAL_DIR = resolve(BLOG_DIR, "..", "..", "buh-portal");
+const PORTAL_DIR = BLOG_DIR;
 
 const RU_DATE = new Intl.DateTimeFormat("ru-RU", {
   day: "numeric", month: "long", year: "numeric", timeZone: "Europe/Moscow",

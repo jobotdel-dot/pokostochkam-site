@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const SRC = resolve(HERE, "..", "src");
-const PORTAL = resolve(HERE, "..", "..", "..", "buh-portal");
+const PORTAL = resolve(HERE, "..");
 const files = [
   "01-avans-usn-2026", "02-reforma-3-0", "03-rashody-usn-2026", "04-rsv-1-kvartal",
   "05-uvedomleniya-aprel", "06-shtrafy-kkt", "07-deklaraciya-nds",

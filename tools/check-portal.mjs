@@ -4,7 +4,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
-const PORTAL = resolve(HERE, "..", "..", "..", "buh-portal");
+const PORTAL = resolve(HERE, "..");
 const files = ["index.html", "article-fine.html", "article-avans-usn-2026.html",
   "article-reforma-3-0.html", "article-rashody-usn-2026.html", "article-rsv-1-kvartal.html",
   "article-uvedomleniya-aprel.html", "article-shtrafy-kkt.html", "article-deklaraciya-nds.html"];
