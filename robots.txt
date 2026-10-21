@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pokostochkam.github.io/sitemap.xml
+Sitemap: https://jobotdel-dot.github.io/sitemap.xml

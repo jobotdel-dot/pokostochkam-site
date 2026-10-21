@@ -12,7 +12,7 @@ import { fileURLToPath } from "node:url";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const SITE = resolve(HERE, "..");
-const BASE = "https://pokostochkam.github.io";
+const BASE = "https://jobotdel-dot.github.io";
 
 const esc = (s) =>
   String(s)
