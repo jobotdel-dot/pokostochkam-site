@@ -28,6 +28,9 @@ RSS-лента, карта сайта. Контент — налоговые и 
 
 ## Документы
 
+- **`YANDEX-WEBMASTER.md`** — подключение Вебмастера Яндекса: добавление сайта,
+  подтверждение прав одной командой, robots.txt, карта сайта, переобход страниц,
+  API-токен и сроки индексации.
 - **`TRAFFIC.md`** — как получить первых посетителей без рекламы: подключение
   Вебмастера Яндекса, Telegram-канал, площадки для статей, реалистичные сроки,
   чек-лист на 7 дней.
@@ -81,6 +84,29 @@ node tools/check-live.mjs
 ```
 
 Репозиторий с самим сайтом: <https://github.com/jobotdel-dot/jobotdel-dot.github.io>
+
+---
+
+## Вебмастер Яндекса
+
+Подробная инструкция — в `YANDEX-WEBMASTER.md`. Коротко:
+
+```bash
+# подтверждение прав: код берётся из Вебмастера («Подтвердить права» → «Файл»)
+node tools/yandex-verify.mjs "yandex-verification-code-123.html:a1b2c3d4"
+
+# работа с API Вебмастера (нужен OAuth-токен из настроек)
+$env:YANDEX_WEBMASTER_TOKEN = "ваш-токен"
+node tools/yandex-api.mjs all          # sitemap + переобход + статистика
+node tools/yandex-api.mjs status       # сколько URL в индексе
+
+# проверка индексации снаружи, без Вебмастера
+node tools/check-index.mjs
+```
+
+Что уже задеплоено и работает: `robots.txt` (открыт, ссылка на sitemap),
+`sitemap.xml` (10 URL), `canonical` на всех страницах, микроразметка Schema.org,
+`og-image.png`, `favicon.svg`, `404.html`, RSS `feed.xml`.
 
 ---
 
