@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Калькуляторы для бухгалтера: УСН, НДС, пени, взносы, штрафы — По косточкам</title>
+<meta name="description" content="Бесплатные калькуляторы для бухгалтера и ИП: сравнение УСН 6% и 15% с учётом НДС, пени по ст. 75 НК РФ, страховые взносы ИП, НДС 22/10/7/5%, авансовый платёж по УСН, штраф по ст. 119 НК РФ. С расчётом по шагам и ссылками на нормы.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/og-image.png">
+<link rel="stylesheet" href="/style.css">
+<link rel="canonical" href="https://jobotdel-dot.github.io/calcs.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Калькуляторы для бухгалтера — По косточкам">
+<meta property="og:description" content="УСН 6% против 15%, пени, взносы ИП, НДС, аванс по УСН, штраф по декларации. С расчётом по шагам и ссылками на нормы.">
+<meta property="og:url" content="https://jobotdel-dot.github.io/calcs.html">
+<meta property="og:image" content="https://jobotdel-dot.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://jobotdel-dot.github.io/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Калькуляторы для бухгалтера — По косточкам",
+  "description": "Калькуляторы: УСН 6% против 15%, пени по ст. 75 НК РФ, страховые взносы ИП, НДС, авансовый платёж по УСН, штраф по ст. 119 НК РФ.",
+  "inLanguage": "ru-RU",
+  "url": "https://jobotdel-dot.github.io/calcs.html",
+  "isPartOf": { "@type": "WebSite", "name": "По косточкам", "url": "https://jobotdel-dot.github.io/" }
+}
+</script>
+</head>
+<body>
+
+<div class="top">
+  <div class="logo">По косточкам<span>· для бухгалтеров и предпринимателей РФ</span></div>
+  <a href="/">На главную</a>
+  <a href="/articles.html">Все разборы</a>
+  <a href="/calcs.html">Калькуляторы</a>
+</div>
+
+<div class="wrap">
+
+<header class="hero">
+  <span class="tag">6 калькуляторов · расчёт по шагам · ссылки на нормы</span>
+  <h1>Калькуляторы для бухгалтера и ИП</h1>
+  <p>Каждый калькулятор показывает не только ответ, но и формулу, по которой он получен, норму НК РФ и предупреждения, если входные данные вызывают вопросы. Все расчёты выполняются в браузере — ничего никуда не отправляется.</p>
+</header>
+
+<section class="art">
+<div class="updated">Нормативы 2026 года · обновлено 21 октября 2026</div>
+
+<div class="related" style="margin-bottom:24px">
+<a href="#usn">Выбор режима — УСН 6% против 15%: полная нагрузка</a><a href="#peni">Просрочка — Пени за просрочку уплаты налога</a><a href="#vznosy">ИП — Страховые взносы ИП «за себя»</a><a href="#nds">НДС — НДС: выделить или начислить</a><a href="#avans">УСН — Авансовый платёж по УСН за квартал</a><a href="#fine">Штраф — Штраф за несданную декларацию</a>
+</div>
+
+<div class="calc-grid">
+  <div class="calc" id="usn">
+    <div class="kicker" style="font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#0f766e;margin-bottom:4px">Выбор режима</div>
+    <h3>УСН 6% против 15%: полная нагрузка</h3>
+    <p class="hint">Сравнивает два объекта с учётом НДС, страховых взносов и минимального налога. Показывает, какой режим дешевле на ваших цифрах, и даёт полную сумму налога, а не только ставку.</p>
+
+  <label>Доходы за год (₽)</label>
+  <input type="number" id="u-income" value="2000000" step="1000">
+  <label>Расходы за год (₽)</label>
+  <input type="number" id="u-expense" value="800000" step="1000">
+  <label>Ставка НДС (режим на 2026 год)</label>
+  <select id="u-vat">
+    <option value="22">22% — общая ставка</option>
+    <option value="10">10% — социальные товары</option>
+    <option value="7">7% — упрощенцы, льготная</option>
+    <option value="5">5% — упрощенцы, льготная</option>
+    <option value="none">Без НДС (доходы ниже порога)</option>
+  </select>
+  <label class="chk"><input type="checkbox" id="u-staff"> Есть сотрудники (уменьшение налога на взносы — не более 50%)</label>
+  <button onclick="calcUsn()">Сравнить режимы</button>
+  <div class="result" id="u-result"></div>
+    <p class="calc-norm" style="font-size:12.5px;color:#6b7280;margin:14px 0 0;font-family:Arial,sans-serif">Норма: ст. 346.11, 346.13, 346.16, 346.18 НК РФ · <a href="https://pravo.gov.ru" target="_blank" rel="nofollow">pravo.gov.ru</a></p>
+  </div>
+
+  <div class="calc" id="peni">
+    <div class="kicker" style="font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#0f766e;margin-bottom:4px">Просрочка</div>
+    <h3>Пени за просрочку уплаты налога</h3>
+    <p class="hint">Считает пеню по ст. 75 НК РФ. Для организаций учитывает трёхступенчатый порядок (1/300 → 1/150 на 31–90 день → 1/300), для ИП и физлиц — 1/300 за весь период.</p>
+
+  <label>Сумма недоимки (₽)</label>
+  <input type="number" id="p-sum" value="500000" step="1000">
+  <label>Дней просрочки</label>
+  <input type="number" id="p-days" value="51" min="0">
+  <label>Ключевая ставка ЦБ (%)</label>
+  <input type="number" id="p-rate" value="14" step="0.5">
+  <label class="chk"><input type="checkbox" id="p-org" checked> Организация (для ИП и физлиц — 1/300 весь период)</label>
+  <button onclick="calcPeni()">Посчитать пеню</button>
+  <div class="result" id="p-result"></div>
+    <p class="calc-norm" style="font-size:12.5px;color:#6b7280;margin:14px 0 0;font-family:Arial,sans-serif">Норма: ст. 75 НК РФ · <a href="https://pravo.gov.ru" target="_blank" rel="nofollow">pravo.gov.ru</a></p>
+  </div>
+
+  <div class="calc" id="vznosy">
+    <div class="kicker" style="font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#0f766e;margin-bottom:4px">ИП</div>
+    <h3>Страховые взносы ИП «за себя»</h3>
+    <p class="hint">Фиксированный взнос за год (57 390 ₽ за 2026) плюс 1% с дохода свыше 300 000 ₽. Учитывает неполный период и потолок дополнительного взноса.</p>
+
+  <label>Доход за год (₽)</label>
+  <input type="number" id="v-income" value="1200000" step="1000">
+  <label>Период в статусе ИП (месяцев)</label>
+  <input type="number" id="v-months" value="12" min="1" max="12">
+  <button onclick="calcIpVznosy()">Посчитать взносы</button>
+  <div class="result" id="v-result"></div>
+    <p class="calc-norm" style="font-size:12.5px;color:#6b7280;margin:14px 0 0;font-family:Arial,sans-serif">Норма: ст. 430 НК РФ · <a href="https://pravo.gov.ru" target="_blank" rel="nofollow">pravo.gov.ru</a></p>
+  </div>
+
+  <div class="calc" id="nds">
+    <div class="kicker" style="font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#0f766e;margin-bottom:4px">НДС</div>
+    <h3>НДС: выделить или начислить</h3>
+    <p class="hint">Два направления в одном: «выделить НДС» из суммы с налогом и «начислить НДС» на цену без налога. Ставки 2026 года: 22%, 10%, 7%, 5%, 0%.</p>
+
+  <label>Сумма (₽)</label>
+  <input type="number" id="n-amount" value="122000" step="100">
+  <label>Что делаем с суммой</label>
+  <select id="n-mode">
+    <option value="extract">Выделить НДС (сумма указана с налогом)</option>
+    <option value="add">Начислить НДС (сумма указана без налога)</option>
+  </select>
+  <label>Ставка НДС</label>
+  <select id="n-rate">
+    <option value="22">22% — общая ставка</option>
+    <option value="10">10% — социальные товары</option>
+    <option value="7">7% — упрощенцы</option>
+    <option value="5">5% — упрощенцы</option>
+    <option value="0">0% — экспорт и отдельные операции</option>
+  </select>
+  <button onclick="calcNds()">Рассчитать НДС</button>
+  <div class="result" id="n-result"></div>
+    <p class="calc-norm" style="font-size:12.5px;color:#6b7280;margin:14px 0 0;font-family:Arial,sans-serif">Норма: ст. 164, 168, 170 НК РФ · <a href="https://pravo.gov.ru" target="_blank" rel="nofollow">pravo.gov.ru</a></p>
+  </div>
+
+  <div class="calc" id="avans">
+    <div class="kicker" style="font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#0f766e;margin-bottom:4px">УСН</div>
+    <h3>Авансовый платёж по УСН за квартал</h3>
+    <p class="hint">Считает аванс с учётом того, что в базу по УСН идёт выручка без НДС. Показывает НДС к уплате и налог по УСН отдельно.</p>
+
+  <label>Поступления за квартал (₽)</label>
+  <input type="number" id="a-income" value="3000000" step="1000">
+  <label>Ставка НДС</label>
+  <select id="a-vat">
+    <option value="22">22% — общая ставка</option>
+    <option value="10">10%</option>
+    <option value="7">7% — упрощенцы</option>
+    <option value="5">5% — упрощенцы</option>
+    <option value="none">Без НДС</option>
+  </select>
+  <button onclick="calcAvans()">Рассчитать аванс</button>
+  <div class="result" id="a-result"></div>
+    <p class="calc-norm" style="font-size:12.5px;color:#6b7280;margin:14px 0 0;font-family:Arial,sans-serif">Норма: ст. 346.21, 346.22 НК РФ · <a href="https://pravo.gov.ru" target="_blank" rel="nofollow">pravo.gov.ru</a></p>
+  </div>
+
+  <div class="calc" id="fine">
+    <div class="kicker" style="font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#0f766e;margin-bottom:4px">Штраф</div>
+    <h3>Штраф за несданную декларацию</h3>
+    <p class="hint">Ст. 119 НК РФ: 5% за каждый полный или неполный месяц просрочки, но не менее 1 000 ₽ и не более 30% от налога. Показывает, как считается сумма и когда срабатывает предел.</p>
+
+  <label>Налог к уплате по декларации (₽)</label>
+  <input type="number" id="f-tax" value="60000" step="1000">
+  <label>Месяцев просрочки</label>
+  <input type="number" id="f-months" value="2" min="0">
+  <label class="chk"><input type="checkbox" id="f-paid"> Налог уже уплачен вовремя (тогда штраф минимальный)</label>
+  <button onclick="calcFine()">Рассчитать штраф</button>
+  <div class="result" id="f-result"></div>
+    <p class="calc-norm" style="font-size:12.5px;color:#6b7280;margin:14px 0 0;font-family:Arial,sans-serif">Норма: ст. 119 НК РФ · <a href="https://pravo.gov.ru" target="_blank" rel="nofollow">pravo.gov.ru</a></p>
+  </div>
+</div>
+
+<div class="note" style="margin-top:28px">
+  <b>Про нормативы.</b> Ставки и лимиты 2026 года, зашитые в калькуляторы:
+  НДС 22% (10% для социальных товаров, 5% и 7% для упрощенцев), порог дохода
+  для освобождения от НДС на УСН — 20 млн ₽, фиксированные взносы ИП — 57 390 ₽,
+  МРОТ — 27 093 ₽, ключевая ставка ЦБ — 14%, предел пени для организаций на 31–90-й день
+  просрочки — 1/150 ключевой ставки. Нормативы меняются: проверяйте актуальную редакцию
+  на <a href="https://pravo.gov.ru" target="_blank" rel="nofollow">pravo.gov.ru</a>,
+  письма ФНС — на <a href="https://www.nalog.gov.ru/rn77/" target="_blank" rel="nofollow">nalog.gov.ru</a>,
+  ставку ЦБ — на <a href="https://www.cbr.ru/hd_base/KeyRate/" target="_blank" rel="nofollow">cbr.ru</a>.
+</div>
+
+<div class="disclaimer"><b>Дисклеймер:</b> калькуляторы дают предварительную оценку и не заменяют сверку
+с первоисточником и консультацию бухгалтера. Ставки, лимиты и процедуры меняются — перед
+применением проверьте действующую редакцию норм.</div>
+</section>
+
+</div>
+
+<footer>
+По косточкам · Разбор ситуаций по законодательству РФ · Не юридическая консультация
+</footer>
+
+<script src="/app.js"></script>
+</body>
+</html>

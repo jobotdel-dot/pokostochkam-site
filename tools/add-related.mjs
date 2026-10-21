@@ -110,6 +110,21 @@ const articlesHtml = `<!DOCTYPE html>
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="${BASE}/og-image.png">
 <link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Все разборы — По косточкам",
+  "description": "Все разборы бухгалтерских ситуаций по законодательству РФ: налоги, отчётность, взносы, штрафы. С примерами расчётов и ссылками на первоисточники.",
+  "inLanguage": "ru-RU",
+  "url": "${BASE}/articles.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "По косточкам",
+    "url": "${BASE}/"
+  }
+}
+</script>
 </head>
 <body>
 
@@ -170,6 +185,13 @@ const rss = `<?xml version="1.0" encoding="UTF-8"?>
     <description>Налоги, отчётность, взносы и штрафы для ИП и бухгалтеров РФ. Разборы с примерами расчётов и ссылками на первоисточники.</description>
     <language>ru</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+    <item>
+      <title>Калькуляторы для бухгалтера и ИП</title>
+      <link>${BASE}/calcs.html</link>
+      <guid isPermaLink="true">${BASE}/calcs.html</guid>
+      <description>УСН 6% против 15% с учётом НДС и взносов, пени по ст. 75 НК РФ, страховые взносы ИП, НДС 22/10/7/5%, авансовый платёж по УСН, штраф по ст. 119 НК РФ. Расчёт по шагам со ссылками на нормы.</description>
+      <category>Калькуляторы</category>
+    </item>
 ${rssItems}
   </channel>
 </rss>

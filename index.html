@@ -41,6 +41,7 @@
 <div class="top">
   <div class="logo">По косточкам<span>· для бухгалтеров и предпринимателей РФ</span></div>
   <a href="#calculators">Калькуляторы</a>
+  <a href="calcs.html">Все 6</a>
   <a href="#articles">Статьи</a>
   <a href="articles.html">Все разборы</a>
   <a href="#how">Как мы проверяем</a>
@@ -58,43 +59,72 @@
 <section id="calculators" style="padding-top:10px">
 
 <h2>Калькуляторы, которые не врут</h2>
-<p class="sub">Все ставки вы вводите сами — сразу видите, откуда цифра. Актуальность всегда можно проверить на nalog.gov.ru.</p>
+<p class="sub">Каждый считает по формуле НК РФ и показывает расчёт по шагам: какое число откуда взялось, какая норма применяется и что стоит перепроверить. Нормативы — 2026 года; проверить актуальность можно на nalog.gov.ru.</p>
 
-<div class="cards">
-  <a class="card" onclick="event.preventDefault(); document.getElementById('calc-fine').scrollIntoView()">
-    <div class="kicker">Налоги</div>
-    <h3>Штраф за несданную декларацию</h3>
-    <p>ст. 119 НК РФ — считаем минимальный и возможный штраф.</p>
-  </a>
-
-  <a class="card" onclick="event.preventDefault(); document.getElementById('calc-usn').scrollIntoView()">
-    <div class="kicker">УСН</div>
-    <h3>6% «доходы» или 15% «доходы минус расходы»?</h3>
-    <p>Сравниваем два режима на ваших цифрах за год.</p>
-  </a>
-</div>
-
-<div class="calc" id="calc-fine">
-<h3>Штраф за несданную налоговую декларацию</h3>
-<p class="hint">По ст. 119 НК РФ: 5% от суммы налога за каждый месяц просрочки, но не менее 1000 ₽ и не более 30% (до 2023 — 40%). Если налог уплачен, штраф минимальный.</p>
-<label>Сумма налога к уплате по декларации (₽)</label>
-<input type="number" id="f-tax" value="50000">
-<label>Месяцев просрочки</label>
-<input type="number" id="f-months" value="2" min="0">
-<label class="chk"><input type="checkbox" id="f-paid"> Налог уже уплачен вовремя</label>
-<button onclick="calcFine()">Рассчитать</button>
-<div class="result" id="f-result"></div>
-</div>
+<div class="calc-grid">
 
 <div class="calc" id="calc-usn">
-<h3>УСН: «Доходы» 6% против «Доходы минус расходы» 15%</h3>
-<p class="hint">Введите примерные годовые цифры. Минимальный налог на режиме «Д-Р» — 1% от доходов.</p>
+<h3>УСН 6% против 15%: полная нагрузка</h3>
+<p class="hint">Сравнивает два объекта с учётом НДС, страховых взносов и минимального налога — и показывает, что вы реально перечислите в бюджет.</p>
 <label>Доходы за год (₽)</label>
-<input type="number" id="u-income" value="2000000">
+<input type="number" id="u-income" value="2000000" step="1000">
 <label>Расходы за год (₽)</label>
-<input type="number" id="u-expense" value="800000">
-<button onclick="calcUsn()">Сравнить</button>
+<input type="number" id="u-expense" value="800000" step="1000">
+<label>Ставка НДС (режим на 2026 год)</label>
+<select id="u-vat">
+  <option value="22">22% — общая ставка</option>
+  <option value="10">10% — социальные товары</option>
+  <option value="7">7% — упрощенцы, льготная</option>
+  <option value="5">5% — упрощенцы, льготная</option>
+  <option value="none">Без НДС (доходы ниже порога)</option>
+</select>
+<label class="chk"><input type="checkbox" id="u-staff"> Есть сотрудники (уменьшение налога на взносы — не более 50%)</label>
+<button onclick="calcUsn()">Сравнить режимы</button>
 <div class="result" id="u-result"></div>
+</div>
+
+<div class="calc" id="calc-peni">
+<h3>Пени за просрочку уплаты налога</h3>
+<p class="hint">Ст. 75 НК РФ. Для организаций — трёхступенчатый порядок (1/300 → 1/150 на 31–90 день → 1/300), для ИП и физлиц — 1/300 за весь период.</p>
+<label>Сумма недоимки (₽)</label>
+<input type="number" id="p-sum" value="500000" step="1000">
+<label>Дней просрочки</label>
+<input type="number" id="p-days" value="51" min="0">
+<label>Ключевая ставка ЦБ (%)</label>
+<input type="number" id="p-rate" value="14" step="0.5">
+<label class="chk"><input type="checkbox" id="p-org" checked> Организация</label>
+<button onclick="calcPeni()">Посчитать пеню</button>
+<div class="result" id="p-result"></div>
+</div>
+
+</div>
+
+<div class="cards" style="margin-top:20px">
+  <a class="card" href="calcs.html#vznosy">
+    <div class="kicker">ИП</div>
+    <h3>Страховые взносы ИП «за себя»</h3>
+    <p>Фиксированный взнос 57 390 ₽ плюс 1% свыше 300 000 ₽. С учётом неполного года и потолка.</p>
+  </a>
+  <a class="card" href="calcs.html#nds">
+    <div class="kicker">НДС</div>
+    <h3>НДС: выделить или начислить</h3>
+    <p>Ставки 22%, 10%, 7%, 5% — и оба направления расчёта в одном калькуляторе.</p>
+  </a>
+  <a class="card" href="calcs.html#avans">
+    <div class="kicker">УСН</div>
+    <h3>Авансовый платёж за квартал</h3>
+    <p>Считает от поступлений с НДС — база по УСН и налог показываются отдельно.</p>
+  </a>
+  <a class="card" href="calcs.html#fine">
+    <div class="kicker">Штраф</div>
+    <h3>Штраф за несданную декларацию</h3>
+    <p>Ст. 119 НК РФ: 5% за месяц, не менее 1 000 ₽ и не более 30% от налога.</p>
+  </a>
+  <a class="card" href="calcs.html">
+    <div class="kicker">Все</div>
+    <h3>Открыть все калькуляторы</h3>
+    <p>Шесть инструментов на одной странице с формулами, нормами и предупреждениями.</p>
+  </a>
 </div>
 </section>
 

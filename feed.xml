@@ -6,7 +6,14 @@
     <atom:link href="https://jobotdel-dot.github.io/feed.xml" rel="self" type="application/rss+xml" xmlns:atom="http://www.w3.org/2005/Atom"/>
     <description>Налоги, отчётность, взносы и штрафы для ИП и бухгалтеров РФ. Разборы с примерами расчётов и ссылками на первоисточники.</description>
     <language>ru</language>
-    <lastBuildDate>Wed, 21 Oct 2026 15:26:18 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2026 16:03:38 GMT</lastBuildDate>
+    <item>
+      <title>Калькуляторы для бухгалтера и ИП</title>
+      <link>https://jobotdel-dot.github.io/calcs.html</link>
+      <guid isPermaLink="true">https://jobotdel-dot.github.io/calcs.html</guid>
+      <description>УСН 6% против 15% с учётом НДС и взносов, пени по ст. 75 НК РФ, страховые взносы ИП, НДС 22/10/7/5%, авансовый платёж по УСН, штраф по ст. 119 НК РФ. Расчёт по шагам со ссылками на нормы.</description>
+      <category>Калькуляторы</category>
+    </item>
     <item>
       <title>Аванс по УСН за I квартал 2026: считаем по шагам, когда часть выручки — уже НДС</title>
       <link>https://jobotdel-dot.github.io/article-avans-usn-2026.html</link>
