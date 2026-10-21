@@ -14,6 +14,10 @@ import { fileURLToPath } from "node:url";
 const HERE = dirname(fileURLToPath(import.meta.url));
 const SITE = resolve(HERE, "..");
 
+// служебные файлы: файл подтверчения прав в Вебмастере и страница 404 —
+// это не контентные страницы, требования к ним другие
+const SERVICE = /^(404\.html|yandex[_-].*\.html|verification.*\.html)$/i;
+
 const files = readdirSync(SITE).filter((f) => f.endsWith(".html"));
 let ok = 0, bad = 0;
 const err = (m) => { console.log("  ✗ " + m); bad++; };
@@ -23,6 +27,17 @@ console.log("Страниц: " + files.length);
 for (const f of files) {
   const html = readFileSync(resolve(SITE, f), "utf8");
   const problems = [];
+
+  // служебный файл — проверяем только код подтверждения
+  if (SERVICE.test(f)) {
+    if (/^yandex[_-].*\.html$/i.test(f) && !/Verification:\s*\S+/.test(html)) {
+      err(`${f}: нет строки "Verification: <код>"`);
+      bad--;
+    } else {
+      ok++;
+    }
+    continue;
+  }
 
   // ссылки
   for (const m of html.matchAll(/href="([^"]+)"/g)) {
