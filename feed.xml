@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>По косточкам — разборы бухгалтерских ситуаций</title>
+    <link>https://jobotdel-dot.github.io/</link>
+    <atom:link href="https://jobotdel-dot.github.io/feed.xml" rel="self" type="application/rss+xml" xmlns:atom="http://www.w3.org/2005/Atom"/>
+    <description>Налоги, отчётность, взносы и штрафы для ИП и бухгалтеров РФ. Разборы с примерами расчётов и ссылками на первоисточники.</description>
+    <language>ru</language>
+    <lastBuildDate>Wed, 21 Oct 2026 15:26:18 GMT</lastBuildDate>
+    <item>
+      <title>Аванс по УСН за I квартал 2026: считаем по шагам, когда часть выручки — уже НДС</title>
+      <link>https://jobotdel-dot.github.io/article-avans-usn-2026.html</link>
+      <guid isPermaLink="true">https://jobotdel-dot.github.io/article-avans-usn-2026.html</guid>
+      <description>Доходы без НДС, переходящие авансы, новые расходы, допвзносы ИП и сроки — расчёт аванса за I квартал по шагам.</description>
+      <category>УСН · Аванс за I квартал</category>
+    </item>
+    <item>
+      <title>Декларация по НДС за I квартал: что изменилось в форме и как проверить себя в 1С</title>
+      <link>https://jobotdel-dot.github.io/article-deklaraciya-nds.html</link>
+      <guid isPermaLink="true">https://jobotdel-dot.github.io/article-deklaraciya-nds.html</guid>
+      <description>Новые строки для авансовых счетов-фактур, ставки 22 и 22/122, контрольные соотношения и проверка в 1С.</description>
+      <category>Отчётность · НДС</category>
+    </item>
+    <item>
+      <title>Не сдали налоговую декларацию вовремя</title>
+      <link>https://jobotdel-dot.github.io/article-fine.html</link>
+      <guid isPermaLink="true">https://jobotdel-dot.github.io/article-fine.html</guid>
+      <description>Разбор по ст. 119 НК РФ: какой штраф за несданную вовремя налоговую декларацию, как его снизить и можно ли избежать. Примеры расчётов и пошаговый план действий.</description>
+      <category></category>
+    </item>
+    <item>
+      <title>Открытый перечень расходов при УСН: что можно списать в 2026 году и чем это доказать</title>
+      <link>https://jobotdel-dot.github.io/article-rashody-usn-2026.html</link>
+      <guid isPermaLink="true">https://jobotdel-dot.github.io/article-rashody-usn-2026.html</guid>
+      <description>Одиннадцать новых видов затрат, шесть запретов и четыре инструмента, чтобы доказать деловую цель расхода.</description>
+      <category>Расходы · УСН</category>
+    </item>
+    <item>
+      <title>Реформа 3.0: шесть послаблений Минфина и что они меняют на практике</title>
+      <link>https://jobotdel-dot.github.io/article-reforma-3-0.html</link>
+      <guid isPermaLink="true">https://jobotdel-dot.github.io/article-reforma-3-0.html</guid>
+      <description>Общепит без НДС до конца года, тариф 7,6 процента, переход на УСН задним числом — шесть мер, которые дают передышку.</description>
+      <category>Изменения · Реформа 3.0</category>
+    </item>
+    <item>
+      <title>РСВ за I квартал 2026: новая форма, новые коды и взносы за директора из МРОТ</title>
+      <link>https://jobotdel-dot.github.io/article-rsv-1-kvartal.html</link>
+      <guid isPermaLink="true">https://jobotdel-dot.github.io/article-rsv-1-kvartal.html</guid>
+      <description>Какую форму сдавать в переходный период, какие коды ставить и как показать взносы за директора из МРОТ.</description>
+      <category>Отчётность · РСВ</category>
+    </item>
+    <item>
+      <title>Штрафы за ККТ: 150 тысяч за первый чек и лестница до 750 тысяч</title>
+      <link>https://jobotdel-dot.github.io/article-shtrafy-kkt.html</link>
+      <guid isPermaLink="true">https://jobotdel-dot.github.io/article-shtrafy-kkt.html</guid>
+      <description>Законопроект о штрафах: 150, 300 и 750 тысяч, отмена предупреждений и как спастись чеком коррекции.</description>
+      <category>ККТ · Штрафы</category>
+    </item>
+    <item>
+      <title>Шесть уведомлений апреля: сроки, коды периодов и КБК для упрощенцев</title>
+      <link>https://jobotdel-dot.github.io/article-uvedomleniya-aprel.html</link>
+      <guid isPermaLink="true">https://jobotdel-dot.github.io/article-uvedomleniya-aprel.html</guid>
+      <description>Шесть уведомлений апреля: коды периодов, КБК по НДФЛ, ОКТМО и почему по взносам уведомление не нужно.</description>
+      <category>Отчётность · Уведомления</category>
+    </item>
+  </channel>
+</rss>

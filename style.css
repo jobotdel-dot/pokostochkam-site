@@ -95,6 +95,16 @@ h2{font-size:26px;margin:0 0 6px}
 footer{border-top:1px solid var(--line);margin-top:30px;padding:24px 0 8px;text-align:center;color:var(--muted);font-size:13px;font-family:Arial,sans-serif}
 .updated{font-family:Arial,sans-serif;font-size:12px;color:var(--muted)}
 
+/* блоки перелинковки */
+.related{display:grid;gap:10px;margin:14px 0 6px}
+a.rel{display:block;border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:8px;
+  padding:12px 16px;background:#fcfcfd;text-decoration:none;color:var(--ink);transition:.15s}
+a.rel:hover{border-color:var(--brand);box-shadow:0 2px 8px rgba(15,118,110,.12)}
+a.rel .kicker{display:block;font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;
+  letter-spacing:.08em;color:var(--brand);margin-bottom:4px}
+a.rel .t{display:block;font-size:16px;font-weight:bold;line-height:1.35}
+a.rel .d{display:block;font-size:13.5px;color:var(--muted);margin-top:4px;line-height:1.5}
+
 /* рекламные слоты (Яндекс.Директ / РСЯ) */
 .ad-slot{position:relative;background:#fcfcfd;border:1px dashed var(--line);border-radius:8px;
   font-family:Arial,sans-serif;font-size:12px;color:#c9ccd1;
