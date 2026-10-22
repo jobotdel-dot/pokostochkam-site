@@ -82,6 +82,11 @@ const main = async () => {
   step(2, "Вёрстка страницы");
   const mdToHtml = run("node", [resolve(HERE, "md-to-html.mjs"), srcPath, resolve(SITE, pageName)]);
   info(mdToHtml.trim().split("\n").pop());
+  // новая страница собирается с нуля — возвращаем на неё счётчик Метрики
+  // (номер берётся с уже размеченных страниц, поэтому аргумент не нужен)
+  const metrika = run("node", [resolve(HERE, "add-metrika.mjs")]);
+  const metrikaLine = metrika.trim().split("\n").find((l) => /^✓|^↻/.test(l)) || "счётчик на месте";
+  info(metrikaLine.trim());
 
   // ── 3. МИКРОРАЗМЕТКА + ЯКОРЯ ─────────────────────────────
   step(3, "Микроразметка и якоря");

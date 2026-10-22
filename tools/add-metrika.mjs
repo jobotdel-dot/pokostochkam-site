@@ -36,39 +36,62 @@ const blockFor = (id) => `<!-- Yandex.Metrika counter -->
 const counterRe = /<!-- Yandex\.Metrika counter -->([\s\S]*?)<!-- \/Yandex\.Metrika counter -->/;
 const idIn = (block) => (block.match(/metrika\/tag\.js\?id=(\d+)/) || [])[1];
 
+// Файлы подтверждения прав (yandex_*.html, google*.html) трогать нельзя:
+// поисковики проверяют их содержимое побайтово, любой лишний тег = не подтверждено.
+const SKIP = /^(google[a-z0-9]*\.html|yandex[_-].*\.html|verification.*\.html)$/i;
+
 const main = () => {
-  const argId = process.argv[2] && /^\d+$/.test(process.argv[2]) ? process.argv[2] : null;
   const pages = readdirSync(SITE).filter((f) => f.endsWith(".html"));
+
+  // номер счётчика: из аргумента, иначе — с любой страницы, где он уже стоит.
+  // Так инструмент можно вызывать без аргумента из конвейера публикации:
+  // новая страница получит тот же счётчик, что и остальные.
+  let counterId = process.argv[2] && /^\d+$/.test(process.argv[2]) ? process.argv[2] : null;
+  if (!counterId) {
+    for (const f of pages) {
+      const m = readFileSync(join(SITE, f), "utf8").match(counterRe);
+      const id = m && idIn(m[0]);
+      if (id && id !== "00000000") { counterId = id; break; }
+    }
+  }
+  if (!counterId) {
+    console.error("Счётчик не найден ни на одной странице. Укажите номер: node tools/add-metrika.mjs 12345678");
+    process.exit(1);
+  }
+  console.log("Счётчик: " + counterId);
+
   let added = 0, replaced = 0, unchanged = 0, noHead = [];
 
   for (const f of pages) {
     const p = join(SITE, f);
     let html = readFileSync(p, "utf8");
+
+    // служебные файлы подтверждения — пропускаем целиком
+    if (SKIP.test(f)) { unchanged++; continue; }
+
     const m = html.match(counterRe);
 
     if (m) {
       const cur = idIn(m[0]);
-      if (cur === (argId || cur)) { unchanged++; continue; }   // тот же номер — не трогаем
-      if (!argId) { unchanged++; continue; }                    // без аргумента — не меняем
-      html = html.replace(counterRe, blockFor(argId));          // замена номера
+      if (cur === counterId) { unchanged++; continue; }        // тот же номер — не трогаем
+      html = html.replace(counterRe, blockFor(counterId));      // замена номера
       writeFileSync(p, html, "utf8");
       replaced++;
-      console.log(`↻ ${f}: счётчик ${cur} → ${argId}`);
+      console.log(`↻ ${f}: счётчик ${cur} → ${counterId}`);
       continue;
     }
 
     // счётчика нет — вставляем перед </head>
     if (!/<\/head>/i.test(html)) { noHead.push(f); continue; }
-    html = html.replace(/<\/head>/i, blockFor(argId ? argId : "00000000") + "\n</head>");
+    html = html.replace(/<\/head>/i, blockFor(counterId) + "\n</head>");
     writeFileSync(p, html, "utf8");
     added++;
-    console.log(`✓ ${f}: счётчик ${argId || "00000000"} установлен`);
+    console.log(`✓ ${f}: счётчик ${counterId} установлен`);
   }
 
   console.log("\nИтого: добавлено " + added + ", заменено " + replaced +
     ", без изменений " + unchanged +
     (noHead.length ? ", без </head> " + noHead.join(", ") : ""));
-  if (added && !argId) console.log("⚠ Вставлен заглушка 00000000 — запустите с номером счётчика!");
 };
 
 main();
