@@ -6,7 +6,7 @@
     <atom:link href="https://jobotdel-dot.github.io/feed.xml" rel="self" type="application/rss+xml" xmlns:atom="http://www.w3.org/2005/Atom"/>
     <description>Налоги, отчётность, взносы и штрафы для ИП и бухгалтеров РФ. Разборы с примерами расчётов и ссылками на первоисточники.</description>
     <language>ru</language>
-    <lastBuildDate>Thu, 22 Oct 2026 07:01:46 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 07:25:01 GMT</lastBuildDate>
     <item>
       <title>Калькуляторы для бухгалтера и ИП</title>
       <link>https://jobotdel-dot.github.io/calcs.html</link>
@@ -34,6 +34,13 @@
       <guid isPermaLink="true">https://jobotdel-dot.github.io/article-deklaraciya-nds.html</guid>
       <description>Новые строки для авансовых счетов-фактур, ставки 22 и 22/122, контрольные соотношения и проверка в 1С.</description>
       <category>Отчётность · НДС</category>
+    </item>
+    <item>
+      <title>ЕФС-1 за 9 месяцев 2026: какой раздел сдавать и как не переплатить штраф</title>
+      <link>https://jobotdel-dot.github.io/article-efs-1-9-mesyacev.html</link>
+      <guid isPermaLink="true">https://jobotdel-dot.github.io/article-efs-1-9-mesyacev.html</guid>
+      <description>Как сдать ЕФС-1 за 9 месяцев 2026 года: новая форма по приказу СФР № 1462, срок 26 октября, тарифы на травматизм и три частых ошибки.</description>
+      <category>Отчётность · Взносы</category>
     </item>
     <item>
       <title>Не сдали налоговую декларацию вовремя</title>
