@@ -6,7 +6,7 @@
     <atom:link href="https://jobotdel-dot.github.io/feed.xml" rel="self" type="application/rss+xml" xmlns:atom="http://www.w3.org/2005/Atom"/>
     <description>Налоги, отчётность, взносы и штрафы для ИП и бухгалтеров РФ. Разборы с примерами расчётов и ссылками на первоисточники.</description>
     <language>ru</language>
-    <lastBuildDate>Thu, 22 Oct 2026 07:35:26 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 07:44:50 GMT</lastBuildDate>
     <item>
       <title>Калькуляторы для бухгалтера и ИП</title>
       <link>https://jobotdel-dot.github.io/calcs.html</link>
@@ -55,6 +55,13 @@
       <guid isPermaLink="true">https://jobotdel-dot.github.io/article-nds-3-kvartal.html</guid>
       <description>Декларация по НДС за III квартал 2026: срок 26 октября, ставки 22 и 5 процентов, вычет по авансовым счетам-фактурам и три ошибки упрощенцев.</description>
       <category>Отчётность · НДС</category>
+    </item>
+    <item>
+      <title>ООО с директором на полставки: численность, взносы и НДФЛ без ошибок</title>
+      <link>https://jobotdel-dot.github.io/article-ooo-direktor-polstavki.html</link>
+      <guid isPermaLink="true">https://jobotdel-dot.github.io/article-ooo-direktor-polstavki.html</guid>
+      <description>ООО с одним директором на полставки: какую численность ставить в РСВ, как считать взносы с МРОТ и НДФЛ и почему ноль в отчёте — ошибка.</description>
+      <category>Практика · Численность</category>
     </item>
     <item>
       <title>Открытый перечень расходов при УСН: что можно списать в 2026 году и чем это доказать</title>
