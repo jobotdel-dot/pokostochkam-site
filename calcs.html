@@ -64,12 +64,12 @@
 <div class="updated">Нормативы 2026 года · обновлено 21 октября 2026</div>
 
 <div class="related" style="margin-bottom:24px">
-<a href="#usn">Выбор режима — УСН 6% против 15%: полная нагрузка</a><a href="#peni">Просрочка — Пени за просрочку уплаты налога</a><a href="#vznosy">ИП — Страховые взносы ИП «за себя»</a><a href="#nds">НДС — НДС: выделить или начислить</a><a href="#avans">УСН — Авансовый платёж по УСН за квартал</a><a href="#fine">Штраф — Штраф за несданную декларацию</a>
+<a href="#usn"><span class="k">Выбор режима</span><span class="t">УСН 6% против 15%: полная нагрузка</span></a><a href="#peni"><span class="k">Просрочка</span><span class="t">Пени за просрочку уплаты налога</span></a><a href="#vznosy"><span class="k">ИП</span><span class="t">Страховые взносы ИП «за себя»</span></a><a href="#nds"><span class="k">НДС</span><span class="t">НДС: выделить или начислить</span></a><a href="#avans"><span class="k">УСН</span><span class="t">Авансовый платёж по УСН за квартал</span></a><a href="#fine"><span class="k">Штраф</span><span class="t">Штраф за несданную декларацию</span></a>
 </div>
 
 <div class="calc-grid">
   <div class="calc" id="usn">
-    <div class="kicker" style="font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#0f766e;margin-bottom:4px">Выбор режима</div>
+    <div class="kicker">Выбор режима</div>
     <h3>УСН 6% против 15%: полная нагрузка</h3>
     <p class="hint">Сравнивает два объекта с учётом НДС, страховых взносов и минимального налога. Показывает, какой режим дешевле на ваших цифрах, и даёт полную сумму налога, а не только ставку.</p>
 
@@ -88,11 +88,11 @@
   <label class="chk"><input type="checkbox" id="u-staff"> Есть сотрудники (уменьшение налога на взносы — не более 50%)</label>
   <button onclick="calcUsn()">Сравнить режимы</button>
   <div class="result" id="u-result"></div>
-    <p class="calc-norm" style="font-size:12.5px;color:#6b7280;margin:14px 0 0;font-family:Arial,sans-serif">Норма: ст. 346.11, 346.13, 346.16, 346.18 НК РФ · <a href="https://pravo.gov.ru" target="_blank" rel="nofollow">pravo.gov.ru</a></p>
+    <p class="calc-norm">Норма: ст. 346.11, 346.13, 346.16, 346.18 НК РФ · <a href="https://pravo.gov.ru" target="_blank" rel="nofollow">pravo.gov.ru</a></p>
   </div>
 
   <div class="calc" id="peni">
-    <div class="kicker" style="font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#0f766e;margin-bottom:4px">Просрочка</div>
+    <div class="kicker">Просрочка</div>
     <h3>Пени за просрочку уплаты налога</h3>
     <p class="hint">Считает пеню по ст. 75 НК РФ. Для организаций учитывает трёхступенчатый порядок (1/300 → 1/150 на 31–90 день → 1/300), для ИП и физлиц — 1/300 за весь период.</p>
 
@@ -105,11 +105,11 @@
   <label class="chk"><input type="checkbox" id="p-org" checked> Организация (для ИП и физлиц — 1/300 весь период)</label>
   <button onclick="calcPeni()">Посчитать пеню</button>
   <div class="result" id="p-result"></div>
-    <p class="calc-norm" style="font-size:12.5px;color:#6b7280;margin:14px 0 0;font-family:Arial,sans-serif">Норма: ст. 75 НК РФ · <a href="https://pravo.gov.ru" target="_blank" rel="nofollow">pravo.gov.ru</a></p>
+    <p class="calc-norm">Норма: ст. 75 НК РФ · <a href="https://pravo.gov.ru" target="_blank" rel="nofollow">pravo.gov.ru</a></p>
   </div>
 
   <div class="calc" id="vznosy">
-    <div class="kicker" style="font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#0f766e;margin-bottom:4px">ИП</div>
+    <div class="kicker">ИП</div>
     <h3>Страховые взносы ИП «за себя»</h3>
     <p class="hint">Фиксированный взнос за год (57 390 ₽ за 2026) плюс 1% с дохода свыше 300 000 ₽. Учитывает неполный период и потолок дополнительного взноса.</p>
 
@@ -119,11 +119,11 @@
   <input type="number" id="v-months" value="12" min="1" max="12">
   <button onclick="calcIpVznosy()">Посчитать взносы</button>
   <div class="result" id="v-result"></div>
-    <p class="calc-norm" style="font-size:12.5px;color:#6b7280;margin:14px 0 0;font-family:Arial,sans-serif">Норма: ст. 430 НК РФ · <a href="https://pravo.gov.ru" target="_blank" rel="nofollow">pravo.gov.ru</a></p>
+    <p class="calc-norm">Норма: ст. 430 НК РФ · <a href="https://pravo.gov.ru" target="_blank" rel="nofollow">pravo.gov.ru</a></p>
   </div>
 
   <div class="calc" id="nds">
-    <div class="kicker" style="font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#0f766e;margin-bottom:4px">НДС</div>
+    <div class="kicker">НДС</div>
     <h3>НДС: выделить или начислить</h3>
     <p class="hint">Два направления в одном: «выделить НДС» из суммы с налогом и «начислить НДС» на цену без налога. Ставки 2026 года: 22%, 10%, 7%, 5%, 0%.</p>
 
@@ -144,11 +144,11 @@
   </select>
   <button onclick="calcNds()">Рассчитать НДС</button>
   <div class="result" id="n-result"></div>
-    <p class="calc-norm" style="font-size:12.5px;color:#6b7280;margin:14px 0 0;font-family:Arial,sans-serif">Норма: ст. 164, 168, 170 НК РФ · <a href="https://pravo.gov.ru" target="_blank" rel="nofollow">pravo.gov.ru</a></p>
+    <p class="calc-norm">Норма: ст. 164, 168, 170 НК РФ · <a href="https://pravo.gov.ru" target="_blank" rel="nofollow">pravo.gov.ru</a></p>
   </div>
 
   <div class="calc" id="avans">
-    <div class="kicker" style="font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#0f766e;margin-bottom:4px">УСН</div>
+    <div class="kicker">УСН</div>
     <h3>Авансовый платёж по УСН за квартал</h3>
     <p class="hint">Считает аванс с учётом того, что в базу по УСН идёт выручка без НДС. Показывает НДС к уплате и налог по УСН отдельно.</p>
 
@@ -164,11 +164,11 @@
   </select>
   <button onclick="calcAvans()">Рассчитать аванс</button>
   <div class="result" id="a-result"></div>
-    <p class="calc-norm" style="font-size:12.5px;color:#6b7280;margin:14px 0 0;font-family:Arial,sans-serif">Норма: ст. 346.21, 346.22 НК РФ · <a href="https://pravo.gov.ru" target="_blank" rel="nofollow">pravo.gov.ru</a></p>
+    <p class="calc-norm">Норма: ст. 346.21, 346.22 НК РФ · <a href="https://pravo.gov.ru" target="_blank" rel="nofollow">pravo.gov.ru</a></p>
   </div>
 
   <div class="calc" id="fine">
-    <div class="kicker" style="font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#0f766e;margin-bottom:4px">Штраф</div>
+    <div class="kicker">Штраф</div>
     <h3>Штраф за несданную декларацию</h3>
     <p class="hint">Ст. 119 НК РФ: 5% за каждый полный или неполный месяц просрочки, но не менее 1 000 ₽ и не более 30% от налога. Показывает, как считается сумма и когда срабатывает предел.</p>
 
@@ -179,7 +179,7 @@
   <label class="chk"><input type="checkbox" id="f-paid"> Налог уже уплачен вовремя (тогда штраф минимальный)</label>
   <button onclick="calcFine()">Рассчитать штраф</button>
   <div class="result" id="f-result"></div>
-    <p class="calc-norm" style="font-size:12.5px;color:#6b7280;margin:14px 0 0;font-family:Arial,sans-serif">Норма: ст. 119 НК РФ · <a href="https://pravo.gov.ru" target="_blank" rel="nofollow">pravo.gov.ru</a></p>
+    <p class="calc-norm">Норма: ст. 119 НК РФ · <a href="https://pravo.gov.ru" target="_blank" rel="nofollow">pravo.gov.ru</a></p>
   </div>
 </div>
 

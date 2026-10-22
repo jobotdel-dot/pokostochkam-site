@@ -142,15 +142,17 @@ const CALCS = [
   },
 ];
 
-const nav = CALCS.map((c) => `<a href="#${c.id}">${esc(c.kicker)} — ${esc(c.title)}</a>`).join("");
+const nav = CALCS.map(
+  (c) => `<a href="#${c.id}"><span class="k">${esc(c.kicker)}</span><span class="t">${esc(c.title)}</span></a>`
+).join("");
 
 const blocks = CALCS.map(
   (c) => `  <div class="calc" id="${c.id}">
-    <div class="kicker" style="font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#0f766e;margin-bottom:4px">${esc(c.kicker)}</div>
+    <div class="kicker">${esc(c.kicker)}</div>
     <h3>${esc(c.title)}</h3>
     <p class="hint">${esc(c.hint)}</p>
 ${c.fields}
-    <p class="calc-norm" style="font-size:12.5px;color:#6b7280;margin:14px 0 0;font-family:Arial,sans-serif">Норма: ${esc(c.norm)} · <a href="https://pravo.gov.ru" target="_blank" rel="nofollow">pravo.gov.ru</a></p>
+    <p class="calc-norm">Норма: ${esc(c.norm)} · <a href="https://pravo.gov.ru" target="_blank" rel="nofollow">pravo.gov.ru</a></p>
   </div>`
 ).join("\n\n");
 
