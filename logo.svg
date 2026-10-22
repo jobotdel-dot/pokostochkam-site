@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 64" width="380" height="64" role="img" aria-label="По косточкам — для бухгалтеров и предпринимателей РФ">
+  <title>По косточкам</title>
+  <rect width="64" height="64" rx="15" fill="#0b6b57"/>
+  <g fill="#ffffff">
+    <circle cx="17.5" cy="24.5" r="8"/>
+    <circle cx="17.5" cy="39.5" r="8"/>
+    <circle cx="46.5" cy="24.5" r="8"/>
+    <circle cx="46.5" cy="39.5" r="8"/>
+    <rect x="17.5" y="26.5" width="29" height="11" rx="5.5"/>
+  </g>
+  <text x="80" y="32" font-family="ui-sans-serif, system-ui, 'Segoe UI', Roboto, Arial, sans-serif"
+        font-size="25" font-weight="700" letter-spacing="-0.6" fill="#121a16">По косточкам</text>
+  <text x="80" y="50" font-family="ui-sans-serif, system-ui, 'Segoe UI', Roboto, Arial, sans-serif"
+        font-size="12" fill="#68756e">для бухгалтеров и предпринимателей РФ</text>
+</svg>

@@ -223,12 +223,20 @@ const pngLen = writePNG(resolve(SITE, "og-image.png"), W, H, img);
 console.log("og-image.png: " + W + "x" + H + ", " + pngLen + " байт");
 
 // ---------- favicon.svg ----------
-const fav = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="12" fill="#0f766e"/>
-  <text x="32" y="45" font-family="Georgia, 'Times New Roman', serif" font-size="38"
-        font-weight="bold" fill="#ffffff" text-anchor="middle">К</text>
-  <circle cx="47" cy="17" r="5" fill="#99f6e4"/>
+// Знак — «косточка» в скруглённой плашке: читается даже в 16 px.
+// Тот же знак лежит в logo-mark.svg (шапка) и logo.svg (лок-ап с названием).
+const fav = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="По косточкам">
+  <title>По косточкам</title>
+  <rect width="64" height="64" rx="15" fill="#0b6b57"/>
+  <g fill="#ffffff">
+    <circle cx="17.5" cy="24.5" r="8"/>
+    <circle cx="17.5" cy="39.5" r="8"/>
+    <circle cx="46.5" cy="24.5" r="8"/>
+    <circle cx="46.5" cy="39.5" r="8"/>
+    <rect x="17.5" y="26.5" width="29" height="11" rx="5.5"/>
+  </g>
 </svg>
 `;
 writeFileSync(resolve(SITE, "favicon.svg"), fav, "utf8");
-console.log("favicon.svg: " + fav.length + " байт");
+writeFileSync(resolve(SITE, "logo-mark.svg"), fav, "utf8");
+console.log("favicon.svg + logo-mark.svg: " + fav.length + " байт");

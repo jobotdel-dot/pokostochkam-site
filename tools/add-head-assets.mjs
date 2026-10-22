@@ -18,7 +18,7 @@ const BASE = "https://jobotdel-dot.github.io";
 const SKIP = /^(google[a-z0-9]*\.html|yandex[_-].*\.html|verification.*\.html)$/i;
 
 const FAVICON = `<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="apple-touch-icon" href="/og-image.png">`;
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">`;
 
 const OG = `<meta property="og:image" content="${BASE}/og-image.png">
 <meta property="og:image:width" content="1200">

@@ -144,9 +144,19 @@ img, svg { max-width: 100%; height: auto; }
   font-weight: 700;
   letter-spacing: -.02em;
   display: flex;
-  align-items: baseline;
-  gap: 8px;
+  align-items: center;
+  gap: 10px;
   white-space: nowrap;
+}
+
+/* знак-косточка из logo-mark.svg: сама иконка, без лишней разметки */
+.top .logo::before {
+  content: "";
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: url("/logo-mark.svg") center / contain no-repeat;
 }
 
 .top .logo span {
@@ -855,7 +865,8 @@ footer a:hover { color: var(--brand); text-decoration: underline; }
 @media (max-width: 760px) {
   body { font-size: 16.5px; }
   .top { padding: 8px 14px; gap: 2px; }
-  .top .logo { font-size: 16px; }
+  .top .logo { font-size: 16px; gap: 8px; }
+  .top .logo::before { width: 26px; height: 26px; border-radius: 8px; }
   .top .logo span { display: none; }
   .top a { padding: 6px 10px; font-size: 13px; }
   .hero { border-radius: var(--radius); }
