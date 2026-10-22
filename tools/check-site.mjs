@@ -14,9 +14,10 @@ import { fileURLToPath } from "node:url";
 const HERE = dirname(fileURLToPath(import.meta.url));
 const SITE = resolve(HERE, "..");
 
-// служебные файлы: файл подтверчения прав в Вебмастере и страница 404 —
-// это не контентные страницы, требования к ним другие
-const SERVICE = /^(404\.html|yandex[_-].*\.html|verification.*\.html)$/i;
+// служебные файлы: файлы подтверждения прав в Вебмастере и Search Console
+// (yandex_*.html, google*.html) и страница 404 — это не контентные страницы,
+// требования к ним другие: Google и Яндекс проверяют только содержимое файла
+const SERVICE = /^(404\.html|yandex[_-].*\.html|google[a-z0-9]*\.html|verification.*\.html)$/i;
 
 const files = readdirSync(SITE).filter((f) => f.endsWith(".html"));
 let ok = 0, bad = 0;

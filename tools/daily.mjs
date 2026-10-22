@@ -62,7 +62,29 @@ const LOW_VALUE = [
   "налоговой проверки", "акта об обеспеченительных мерах", "порядка рассмотрения",
   "оценки регулирующего воздействия", "многофакторной аутентификац", "электронной подписи",
   "государственной тайны", "об операторе", "об архив",
+  // ЕСХН и прочие режимы не для нашей аудитории (УСН/ИП/взносы/НДС)
+  "сельскохозяйственн", "единому сельскохозяйственному", "патентной системе",
+  // внутренняя административка ведомств — читателю бесполезна
+  "территориальн", "порядка взаимодействия", "сведений о доходах",
+  "коллекторск", "бюро кредитных историй", "цифрового рубля",
+  "типовых положений", "структурных подразделен",
 ];
+
+// Журнал уже выданных заготовок: чтобы каждый день была НОВАЯ тема,
+// а не та же вершина очереди. Хранится в out/daily/seen.json.
+const SEEN_PATH = resolve(DAILY, "seen.json");
+const loadSeen = () => {
+  try { return JSON.parse(readFileSync(SEEN_PATH, "utf8")); } catch { return { items: [] }; }
+};
+const saveSeen = (seen) => writeFileSync(SEEN_PATH, JSON.stringify(seen, null, 2), "utf8");
+const normalize = (s) => (s || "").toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim();
+// тема уже выдавалась, если совпал номер акта или заголовок
+const isSeen = (seen, t) =>
+  seen.items.some(
+    (s) =>
+      (t.eoNumber && s.eoNumber && s.eoNumber === t.eoNumber) ||
+      (t.title && s.title && normalize(s.title) === normalize(t.title))
+  );
 
 const matches = (title, words) => {
   const t = title.toLowerCase();
@@ -96,7 +118,8 @@ const main = async () => {
   }
   const { topics = [] } = JSON.parse(readFileSync(topicsPath, "utf8"));
   const done = published();
-  info("опубликовано разборов: " + done.length);
+  const seen = loadSeen();
+  info("опубликовано разборов: " + done.length + " · заготовок уже выдано: " + seen.items.length);
 
   const candidates = topics
     .map((t) => {
@@ -118,11 +141,11 @@ const main = async () => {
         overlap * 3;
       return { t, score: s, overlap, low };
     })
-    .filter((c) => c.overlap < 3 && !c.low)
+    .filter((c) => c.overlap < 3 && !c.low && !isSeen(seen, c.t))
     .sort((a, b) => b.score - a.score);
 
   if (!candidates.length) {
-    info("новых тем не найдено");
+    info("новых тем не найдено — все подходящие уже выданы. Ждём новых актов.");
     return;
   }
   const best = candidates[0];
@@ -166,6 +189,16 @@ ${best.t.eoNumber ? `- **Страницы акта для сверки:** \`node
 `;
   writeFileSync(file, draft, "utf8");
   ok("заготовка: out/daily/" + name);
+
+  // записываем в журнал, чтобы завтра не выбрать эту же тему
+  seen.items.push({
+    eoNumber: best.t.eoNumber || null,
+    title: best.t.title,
+    number: best.t.number || null,
+    file: name,
+    givenAt: new Date().toISOString().slice(0, 10),
+  });
+  saveSeen(seen);
 
   // ── 4. Сводка ───────────────────────────────────────────
   console.log("\n" + "─".repeat(64));
