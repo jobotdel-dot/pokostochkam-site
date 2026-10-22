@@ -92,7 +92,10 @@ const main = async () => {
   step(3, "Микроразметка и якоря");
   run("node", [resolve(HERE, "add-jsonld.mjs")]);
   run("node", [resolve(HERE, "add-anchors.mjs")]);
-  ok("Schema.org Article + id заголовков");
+  // favicon и og:image: новая страница собирается с нуля, без этого шага
+  // иконка на вкладке пропадает (служебные файлы подтверждения инструмент пропускает)
+  run("node", [resolve(HERE, "add-head-assets.mjs")]);
+  ok("Schema.org Article, id заголовков, favicon и og:image");
 
   // ── 4. ПЕРЕЛИНКОВКА ─────────────────────────────────────
   step(4, "Перелинковка и страница «Все разборы»");

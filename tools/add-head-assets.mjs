@@ -13,6 +13,10 @@ const HERE = dirname(fileURLToPath(import.meta.url));
 const SITE = resolve(HERE, "..");
 const BASE = "https://jobotdel-dot.github.io";
 
+// Файлы подтверждения прав поисковиков не трогаем: Яндекс и Google проверяют
+// их содержимое строго, любой лишний тег означает «не подтверждено».
+const SKIP = /^(google[a-z0-9]*\.html|yandex[_-].*\.html|verification.*\.html)$/i;
+
 const FAVICON = `<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/og-image.png">`;
 
@@ -26,6 +30,7 @@ let n = 0;
 for (const f of readdirSync(SITE).filter((x) => x.endsWith(".html"))) {
   const p = resolve(SITE, f);
   let html = readFileSync(p, "utf8");
+  if (SKIP.test(f)) { console.log("служебный файл, пропускаю: " + f); continue; }
   if (html.includes('rel="icon"')) { console.log("уже есть: " + f); continue; }
 
   // favicon — рядом со stylesheet
