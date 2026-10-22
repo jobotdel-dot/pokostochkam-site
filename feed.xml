@@ -6,7 +6,7 @@
     <atom:link href="https://jobotdel-dot.github.io/feed.xml" rel="self" type="application/rss+xml" xmlns:atom="http://www.w3.org/2005/Atom"/>
     <description>Налоги, отчётность, взносы и штрафы для ИП и бухгалтеров РФ. Разборы с примерами расчётов и ссылками на первоисточники.</description>
     <language>ru</language>
-    <lastBuildDate>Thu, 22 Oct 2026 07:35:15 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 07:35:26 GMT</lastBuildDate>
     <item>
       <title>Калькуляторы для бухгалтера и ИП</title>
       <link>https://jobotdel-dot.github.io/calcs.html</link>
@@ -48,6 +48,13 @@
       <guid isPermaLink="true">https://jobotdel-dot.github.io/article-fine.html</guid>
       <description>Разбор по ст. 119 НК РФ: какой штраф за несданную вовремя налоговую декларацию, как его снизить и можно ли избежать. Примеры расчётов и пошаговый план действий.</description>
       <category></category>
+    </item>
+    <item>
+      <title>Декларация по НДС за III квартал 2026: ставки 22 и 5 % без ошибок</title>
+      <link>https://jobotdel-dot.github.io/article-nds-3-kvartal.html</link>
+      <guid isPermaLink="true">https://jobotdel-dot.github.io/article-nds-3-kvartal.html</guid>
+      <description>Декларация по НДС за III квартал 2026: срок 26 октября, ставки 22 и 5 процентов, вычет по авансовым счетам-фактурам и три ошибки упрощенцев.</description>
+      <category>Отчётность · НДС</category>
     </item>
     <item>
       <title>Открытый перечень расходов при УСН: что можно списать в 2026 году и чем это доказать</title>
