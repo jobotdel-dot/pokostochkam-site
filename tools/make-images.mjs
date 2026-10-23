@@ -175,52 +175,11 @@ function drawText(rgb, w, h, text, x0, y0, scale, color, spacing = 1) {
 const textWidth = (text, scale, spacing = 1) => text.length * (5 + spacing) * scale;
 
 // ---------- og-image: 1200x630 ----------
-const W = 1200, H = 630;
-const img = Buffer.alloc(W * H * 3);
-// фон: тёмный бирюзовый (совпадает с --brand #0f766e)
-for (let i = 0; i < W * H; i++) {
-  img[i * 3] = 15; img[i * 3 + 1] = 118; img[i * 3 + 2] = 110;
-}
-// светлая полоса снизу
-for (let y = H - 90; y < H; y++) {
-  for (let x = 0; x < W; x++) {
-    const o = (y * W + x) * 3;
-    img[o] = 240; img[o + 1] = 253; img[o + 2] = 250;
-  }
-}
-// декоративные точки «косточки»
-for (let i = 0; i < 26; i++) {
-  const cx = 60 + ((i * 137) % (W - 120));
-  const cy = 70 + ((i * 83) % 380);
-  const r = 3 + (i % 4);
-  for (let y = cy - r; y <= cy + r; y++) {
-    for (let x = cx - r; x <= cx + r; x++) {
-      if (x < 0 || y < 0 || x >= W || y >= H) continue;
-      const d = Math.hypot(x - cx, y - cy);
-      if (d > r) continue;
-      const o = (y * W + x) * 3;
-      img[o] = 153; img[o + 1] = 246; img[o + 2] = 228;
-    }
-  }
-}
-// заголовок
-const t1 = "ПО КОСТОЧКАМ";
-const s1 = 22;
-const x1 = Math.round((W - textWidth(t1, s1)) / 2);
-drawText(img, W, H, t1, x1, 120, s1, [255, 255, 255]);
-// подзаголовок
-const t2 = "НАЛОГИ ОТЧЕТНОСТЬ ШТРАФЫ";
-const s2 = 6;
-const x2 = Math.round((W - textWidth(t2, s2)) / 2);
-drawText(img, W, H, t2, x2, 300, s2, [186, 230, 229]);
-// нижняя подпись
-const t3 = "РАЗБОРЫ ПО ЗАКОНОДАТЕЛЬСТВУ РФ";
-const s3 = 4;
-const x3 = Math.round((W - textWidth(t3, s3)) / 2);
-drawText(img, W, H, t3, x3, H - 58, s3, [15, 118, 110]);
-
-const pngLen = writePNG(resolve(SITE, "og-image.png"), W, H, img);
-console.log("og-image.png: " + W + "x" + H + ", " + pngLen + " байт");
+// Превью ссылки теперь собирается из HTML-шаблона tools/og-template.html,
+// чтобы вёрстка совпадала со стилем сайта, а правки текста были в одном месте:
+//   node tools/make-og.mjs
+// Здесь картинку не рисуем — иначе старая процедурная версия перезапишет новую.
+console.log("og-image.png: собирается отдельно — node tools/make-og.mjs");
 
 // ---------- favicon.svg ----------
 // Знак — «косточка» в скруглённой плашке: читается даже в 16 px.
