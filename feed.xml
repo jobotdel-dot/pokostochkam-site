@@ -6,7 +6,7 @@
     <atom:link href="https://jobotdel-dot.github.io/feed.xml" rel="self" type="application/rss+xml" xmlns:atom="http://www.w3.org/2005/Atom"/>
     <description>Налоги, отчётность, взносы и штрафы для ИП и бухгалтеров РФ. Разборы с примерами расчётов и ссылками на первоисточники.</description>
     <language>ru</language>
-    <lastBuildDate>Fri, 23 Oct 2026 07:51:20 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 08:03:47 GMT</lastBuildDate>
     <item>
       <title>Калькуляторы для бухгалтера и ИП</title>
       <link>https://jobotdel-dot.github.io/calcs.html</link>
@@ -27,6 +27,13 @@
       <guid isPermaLink="true">https://jobotdel-dot.github.io/article-avans-usn-2026.html</guid>
       <description>Доходы без НДС, переходящие авансы, новые расходы, допвзносы ИП и сроки — расчёт аванса за I квартал по шагам.</description>
       <category>УСН · Аванс за I квартал</category>
+    </item>
+    <item>
+      <title>Аванс по УСН за 9 месяцев 2026: срок 28 октября и что с взносами</title>
+      <link>https://jobotdel-dot.github.io/article-avans-usn-9-mesyacev.html</link>
+      <guid isPermaLink="true">https://jobotdel-dot.github.io/article-avans-usn-9-mesyacev.html</guid>
+      <description>Аванс по УСН за 9 месяцев 2026: срок 28 октября, уведомление до 25-го, вычет взносов до 100 % и 50 %, расчёт на трёх примерах.</description>
+      <category>УСН · Аванс</category>
     </item>
     <item>
       <title>Декларация по НДС за I квартал: что изменилось в форме и как проверить себя в 1С</title>
