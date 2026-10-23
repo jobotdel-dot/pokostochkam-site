@@ -6,7 +6,7 @@
     <atom:link href="https://jobotdel-dot.github.io/feed.xml" rel="self" type="application/rss+xml" xmlns:atom="http://www.w3.org/2005/Atom"/>
     <description>Налоги, отчётность, взносы и штрафы для ИП и бухгалтеров РФ. Разборы с примерами расчётов и ссылками на первоисточники.</description>
     <language>ru</language>
-    <lastBuildDate>Fri, 23 Oct 2026 08:37:55 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 09:00:18 GMT</lastBuildDate>
     <item>
       <title>Калькуляторы для бухгалтера и ИП</title>
       <link>https://jobotdel-dot.github.io/calcs.html</link>
@@ -60,7 +60,7 @@
       <title>Доход на УСН через маркетплейс: отчёт в одном квартале, деньги в другом</title>
       <link>https://jobotdel-dot.github.io/article-marketplejs-usn-dohod.html</link>
       <guid isPermaLink="true">https://jobotdel-dot.github.io/article-marketplejs-usn-dohod.html</guid>
-      <description>Маркетплейс задерживает выплату: в каком квартале показывать доход на УСН, как считать аванс и почему отчёт и поступление денег — не одно и то же.</description>
+      <description>Маркетплейс задерживает выплату: в каком квартале доход на УСН, как списать себестоимость и комиссию и как считать аванс по полугодию.</description>
       <category>Маркетплейсы · УСН</category>
     </item>
     <item>
