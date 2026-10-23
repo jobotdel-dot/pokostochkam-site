@@ -6,7 +6,7 @@
     <atom:link href="https://jobotdel-dot.github.io/feed.xml" rel="self" type="application/rss+xml" xmlns:atom="http://www.w3.org/2005/Atom"/>
     <description>Налоги, отчётность, взносы и штрафы для ИП и бухгалтеров РФ. Разборы с примерами расчётов и ссылками на первоисточники.</description>
     <language>ru</language>
-    <lastBuildDate>Fri, 23 Oct 2026 08:03:47 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 08:19:20 GMT</lastBuildDate>
     <item>
       <title>Калькуляторы для бухгалтера и ИП</title>
       <link>https://jobotdel-dot.github.io/calcs.html</link>
@@ -55,6 +55,13 @@
       <guid isPermaLink="true">https://jobotdel-dot.github.io/article-fine.html</guid>
       <description>Разбор по ст. 119 НК РФ: какой штраф за несданную вовремя налоговую декларацию, как его снизить и можно ли избежать. Примеры расчётов и пошаговый план действий.</description>
       <category></category>
+    </item>
+    <item>
+      <title>Доход на УСН через маркетплейс: отчёт в одном квартале, деньги в другом</title>
+      <link>https://jobotdel-dot.github.io/article-marketplejs-usn-dohod.html</link>
+      <guid isPermaLink="true">https://jobotdel-dot.github.io/article-marketplejs-usn-dohod.html</guid>
+      <description>Маркетплейс задерживает выплату: когда возникает доход на УСН, нужно ли платить аванс за квартал отчёта и как не задвоить выручку.</description>
+      <category>Маркетплейсы · УСН</category>
     </item>
     <item>
       <title>Декларация по НДС за III квартал 2026: пять мест, где теряют деньги</title>
